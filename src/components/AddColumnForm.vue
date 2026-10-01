@@ -1,0 +1,36 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const emit = defineEmits<{ add: [title: string] }>()
+const title = ref('')
+
+function submit() {
+  const value = title.value.trim()
+  if (!value) return
+  emit('add', value)
+  title.value = ''
+}
+</script>
+
+<template>
+  <form
+    class="flex w-72 shrink-0 flex-col gap-2 rounded-lg border-2 border-dashed border-slate-300 p-3"
+    @submit.prevent="submit"
+  >
+    <label for="new-column" class="sr-only">Nom de la colonne</label>
+    <input
+      id="new-column"
+      v-model="title"
+      maxlength="50"
+      placeholder="Nom de la colonne"
+      class="rounded border border-slate-300 px-2 py-1"
+    />
+    <button
+      type="submit"
+      :disabled="!title.trim()"
+      class="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700 disabled:opacity-50"
+    >
+      + Ajouter une colonne
+    </button>
+  </form>
+</template>
