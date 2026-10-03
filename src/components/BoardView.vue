@@ -12,6 +12,7 @@ const board = useBoardStore()
       v-for="column in board.columns"
       :key="column.id"
       :column="column"
+      @add-task="board.addTask(column.id, $event)"
     />
     <AddColumnForm @add="board.addColumn" />
   </main>
