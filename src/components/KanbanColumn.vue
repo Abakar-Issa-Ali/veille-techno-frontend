@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import type { Column } from '@/types/kanban'
+import type { Column, Task } from '@/types/kanban'
 import TaskCard from './TaskCard.vue'
 import AddTaskForm from './AddTaskForm.vue'
 
 defineProps<{ column: Column }>()
-const emit = defineEmits<{ 'add-task': [title: string] }>()
+const emit = defineEmits<{
+  'add-task': [title: string]
+  'open-task': [task: Task]
+}>()
 </script>
 
 <template>
@@ -17,7 +20,7 @@ const emit = defineEmits<{ 'add-task': [title: string] }>()
     </header>
 
     <ul class="flex min-h-0 flex-col gap-2 overflow-y-auto">
-      <TaskCard v-for="task in column.tasks" :key="task.id" :task="task" />
+      <TaskCard v-for="task in column.tasks" :key="task.id" :task="task" @open="emit('open-task', task)"/>
     </ul>
 
     <AddTaskForm @add="emit('add-task', $event)" />
