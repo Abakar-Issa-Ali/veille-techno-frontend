@@ -22,7 +22,7 @@ function save() {
 }
 
 function remove() {
-  if (confirm('Supprimer cette tâche ?')) emit('delete')
+  if (confirm('Delete this task?')) emit('delete')
 }
 </script>
 
@@ -33,10 +33,10 @@ function remove() {
     @close="emit('close')"
   >
     <form class="flex flex-col gap-3 p-5" @submit.prevent="save">
-      <h2 class="text-lg font-semibold text-slate-800">Modify task</h2>
+      <h2 class="text-lg font-semibold text-slate-800">Edit task</h2>
 
       <label class="flex flex-col gap-1 text-sm text-slate-700">
-        Titre
+        Title
         <input v-model="title" maxlength="100" class="rounded border border-slate-300 px-2 py-1" />
       </label>
 

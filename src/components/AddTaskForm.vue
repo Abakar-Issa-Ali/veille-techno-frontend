@@ -33,8 +33,8 @@ function submit() {
       ref="input"
       v-model="title"
       maxlength="100"
-      placeholder="Title of the task"
-      aria-label="Title of the task"
+      placeholder="Task title"
+      aria-label="Task title"
       class="rounded border border-slate-300 bg-white px-2 py-1 text-sm"
       @keydown.esc="close"
     />

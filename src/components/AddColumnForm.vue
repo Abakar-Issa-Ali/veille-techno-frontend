@@ -22,7 +22,7 @@ function submit() {
       id="new-column"
       v-model="title"
       maxlength="50"
-      placeholder="Title of the column"
+      placeholder="Column title"
       class="rounded border border-slate-300 px-2 py-1"
     />
     <button
