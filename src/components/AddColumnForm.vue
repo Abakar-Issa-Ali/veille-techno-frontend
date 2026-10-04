@@ -14,7 +14,7 @@ function submit() {
 
 <template>
   <form
-    class="flex w-72 shrink-0 flex-col gap-2 rounded-lg border-2 border-dashed border-slate-300 p-3"
+    class="flex w-72 shrink-0 flex-col gap-2 rounded-lg border-2 border-dashed border-slate-300 p-3 print:hidden"
     @submit.prevent="submit"
   >
     <label for="new-column" class="sr-only">New Column</label>

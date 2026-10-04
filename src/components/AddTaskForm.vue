@@ -28,7 +28,7 @@ function submit() {
 </script>
 
 <template>
-  <form v-if="isOpen" class="mt-2 flex flex-col gap-2" @submit.prevent="submit">
+  <form v-if="isOpen" class="mt-2 flex flex-col gap-2 print:hidden" @submit.prevent="submit">
     <input
       ref="input"
       v-model="title"
@@ -42,11 +42,11 @@ function submit() {
       <button
         type="submit"
         :disabled="!title.trim()"
-        class="rounded bg-blue-600 px-3 py-1 text-sm text-white hover:bg-blue-700 disabled:opacity-50"
+        class="rounded bg-blue-600 px-3 py-1 text-sm text-white hover:bg-blue-700 disabled:opacity-50 print:hidden"
       >
         Add
       </button>
-      <button type="button" class="px-2 text-sm text-slate-600 hover:text-slate-900" @click="close">
+      <button type="button" class="px-2 text-sm text-slate-600 hover:text-slate-900 print:hidden" @click="close">
         Cancel
       </button>
     </div>
@@ -55,7 +55,7 @@ function submit() {
   <button
     v-else
     type="button"
-    class="mt-2 rounded px-2 py-1 text-left text-sm text-slate-600 hover:bg-slate-200"
+    class="mt-2 rounded px-2 py-1 text-left text-sm text-slate-600 hover:bg-slate-200 print:hidden"
     @click="open"
   >
     + Add a task

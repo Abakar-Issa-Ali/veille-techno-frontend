@@ -23,7 +23,7 @@ function deleteTask() {
 </script>
 
 <template>
-  <main class="relative flex items-start gap-4 overflow-x-auto p-4">
+  <main class="relative flex items-start gap-4 overflow-x-auto p-4 print:flex-wrap print:overflow-visible">
     <KanbanColumn
       v-for="column in board.columns"
       :key="column.id"

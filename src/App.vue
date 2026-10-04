@@ -3,7 +3,7 @@ import BoardView from '@/components/BoardView.vue'
 </script>
 
 <template>
-  <div class="flex h-screen flex-col bg-white">
+  <div class="flex h-screen flex-col bg-white print:h-auto">
     <header class="shrink-0 border-b border-slate-200 px-4 py-3">
       <h1 class="text-xl font-bold text-slate-800">Board</h1>
     </header>
